@@ -1,0 +1,36 @@
+.weather-forecast {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .weather-forecast-box {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .weather-forecast-date {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .weather-forecast-icon {
+    margin-bottom: 10px;
+  }
+  
+  .weather-forecast-icon img {
+    max-width: 100%;
+  }
+  
+  .weather-forecast-temperature {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .weather-forecast-description {
+    font-size: 1.2rem;
+  }

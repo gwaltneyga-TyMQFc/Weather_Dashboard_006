@@ -9,8 +9,8 @@ searchButton.addEventListener("click", function () {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      var lat = data.lat;
-      var long = data.lon;
+      var lat = data[0].lat;
+      var long = data[0].lon;
       const forecast_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${apiKey}`;
 
       fetch(forecast_URL)
