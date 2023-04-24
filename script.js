@@ -1,6 +1,24 @@
 const searchInput = document.getElementById("city-search");
 const searchButton = document.getElementById("search-button");
 const apiKey = "b4e93fcce0df6a5969660b5f52aed994";
+const searchHistoryList = document.querySelector('#search-history-list');
+
+// Get the search history from local storage, or initialize it if it doesn't exist
+let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+
+// Function to update the search history container
+function updateSearchHistory() {
+  // Clear the list of previous searches
+  searchHistoryList.innerHTML = '';
+
+  // Loop through the search history and create a new list item for each city
+  for (let i = 0; i < searchHistory.length; i++) {
+    const li = document.createElement('li');
+    li.textContent = searchHistory[i];
+    searchHistoryList.appendChild(li);
+  }
+}
+
 
 searchButton.addEventListener("click", function () {
   const city = searchInput.value;
@@ -55,6 +73,16 @@ searchButton.addEventListener("click", function () {
             weatherIconElement.setAttribute("src", forecast.weatherIcon);
             weatherIconElement.setAttribute("alt", forecast.weatherCondition);
             box.appendChild(weatherIconElement);
+
+             const humidityElement = document.createElement("div");
+              humidityElement.classList.add("weather-forecast-humidity");
+              humidityElement.textContent = `Humidity: ${forecast.main.humidity} %`;
+              box.appendChild(humidityElement);
+
+             const windSpeedElement = document.createElement("div");
+             windSpeedElement.classList.add("weather-forecast-wind-speed");
+             windSpeedElement.textContent =`Wind Speed: ${forecast.wind.speed} mph`;
+              box.appendChild(windSpeedElement);
 
             container.appendChild(box);
           });
