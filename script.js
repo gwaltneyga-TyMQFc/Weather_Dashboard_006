@@ -40,7 +40,7 @@ searchButton.addEventListener("click", function () {
 
             const temperatureElement = document.createElement("div");
             temperatureElement.classList.add("weather-forecast-temperature");
-            temperatureElement.textContent = `${forecast.temperature}°C`;
+            temperatureElement.textContent = `${forecast.temperature}°F`;
             box.appendChild(temperatureElement);
 
             const weatherConditionElement = document.createElement("div");
