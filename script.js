@@ -11,7 +11,7 @@ searchButton.addEventListener("click", function () {
       console.log(data);
       var lat = data[0].lat;
       var long = data[0].lon;
-      const forecast_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${apiKey}`;
+      const forecast_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${apiKey}&units=imperial`;
 
       fetch(forecast_URL)
         .then((response) => response.json())

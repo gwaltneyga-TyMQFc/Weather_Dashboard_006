@@ -34,3 +34,8 @@
   .weather-forecast-description {
     font-size: 1.2rem;
   }
+
+  body {
+    background: deepskyblue;
+
+  }
